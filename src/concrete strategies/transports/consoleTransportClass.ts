@@ -1,4 +1,4 @@
-import {LogRecord, Transport} from "../interfaces";
+import {LogRecord, Transport} from "../../interfaces";
 
 export class ConsoleTransportClass implements Transport {
 

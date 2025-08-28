@@ -1,5 +1,5 @@
 import {Level} from "./interfaces";
-import {ConsoleTransportClass} from "./concrete strategies/consoleTransportClass";
+import {ConsoleTransportClass} from "./concrete strategies/transports/consoleTransportClass";
 // import {TextFormatterClass} from "./concrete strategies/formatters/textFormatterClass";
 import {MinLevelPolicyClass} from "./concrete strategies/policies/minLevelPolicyClass";
 import {LoggerClass} from "./LoggerClass";
