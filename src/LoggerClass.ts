@@ -5,29 +5,33 @@ export class LoggerClass {
 
 
     //private method that uses strategies to create the logger
-    private _log(level: Level, message: string, meta:Record<string, unknown>): void {
+    private _log(level: Level, message: string, meta?:Record<string, unknown>): void {
         if (!this.policy.allow(level)) return;
 
         const logRecord: LogRecord = {
-            level: level,
+            level,
             message,
             timestamp: new Date(),
-            meta,
+            meta: meta? meta : undefined,
         }
 
         const formatterStr = this.formatter.format(logRecord);
         this.transport.send(logRecord ,formatterStr)
     }
 
-    info(message: string, meta:Record<string, unknown>): void {
+    info(message: string, meta?:Record<string, unknown>): void {
         this._log('info', message, meta)
     }
 
-    warn(message: string, meta:Record<string, unknown>): void {
+    debug(message: string, meta?:Record<string, unknown>): void {
+        this._log('debug', message, meta)
+    }
+
+    warn(message: string, meta?:Record<string, unknown>): void {
         this._log('warn', message, meta)
     }
 
-    error(message: string, meta:Record<string, unknown>): void {
+    error(message: string, meta?:Record<string, unknown>): void {
         this._log('error', message, meta)
     }
 }

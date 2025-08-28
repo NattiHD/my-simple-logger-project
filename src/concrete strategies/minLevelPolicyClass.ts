@@ -5,16 +5,16 @@ export class MinLevelPolicyClass implements LevelPolicy {
 
     private _getLevelValue(level: Level): number {
         switch (level.toUpperCase()) {
-            case 'ERROR':
-                return 0;
-            case 'WARN':
-                return 1;
-            case 'INFO':
-                return 2;
             case 'DEBUG':
+                return 0;
+            case 'INFO':
+                return 1;
+            case 'WARN':
+                return 2;
+            case 'ERROR':
                 return 3;
             default:
-                return 3;
+                return 0;
         }
     }
 
