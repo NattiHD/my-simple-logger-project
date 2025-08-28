@@ -1,8 +1,9 @@
 import {Level} from "./interfaces";
 import {ConsoleTransportClass} from "./concrete strategies/consoleTransportClass";
-import {TextFormatterClass} from "./concrete strategies/formatters/textFormatterClass";
+// import {TextFormatterClass} from "./concrete strategies/formatters/textFormatterClass";
 import {MinLevelPolicyClass} from "./concrete strategies/minLevelPolicyClass";
 import {LoggerClass} from "./LoggerClass";
+import {JsonFormatterClass} from "./concrete strategies/formatters/jsonFormatterClass";
 
 
 // setting a level for the filtration test
@@ -11,7 +12,7 @@ const minLogLevel: Level = 'warn'
 
 //creating strategy instances
 const policy = new MinLevelPolicyClass(minLogLevel)
-const formatter = new TextFormatterClass()
+const formatter = new JsonFormatterClass()
 const transport = new ConsoleTransportClass()
 
 //creating the logger
