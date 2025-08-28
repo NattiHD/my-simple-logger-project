@@ -1,4 +1,4 @@
-import {Level, LevelPolicy} from "../interfaces";
+import {Level, LevelPolicy} from "../../interfaces";
 
 export class MinLevelPolicyClass implements LevelPolicy {
     constructor(private minLevel: Level) {}
